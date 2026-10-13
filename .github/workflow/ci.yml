@@ -1,0 +1,34 @@
+name: Data Analysis CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "developer", "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-and-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout the code from the repository
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    # 2. Set up Python environment
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+
+    # 3. Install project dependencies
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    # 4. Run Unit Tests using pytest
+    - name: Run Tests
+      run: |
+        pytest
