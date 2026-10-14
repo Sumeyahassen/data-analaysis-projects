@@ -1,0 +1,17 @@
+# Python & Environment
+__pycache__/
+venv/
+.env
+
+# Data files that can in git file
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Trained Models
+models/*.pkl
+models/*.joblib
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
