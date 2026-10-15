@@ -1,0 +1,40 @@
+# =====================================
+# Python & Virtual Environments
+# =====================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.env
+
+# =====================================
+# Jupyter Notebooks
+# =====================================
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# =====================================
+# IDEs and Operating Systems
+# =====================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =====================================
+# Project Specific: Data & Large Files
+# =====================================
+# Ignore large raw and processed CSV data files so they don't bloat GitHub
+data/raw/*.csv
+data/processed/*.csv
+
+# =====================================
+# Project Specific: Outputs & Models
+# =====================================
+# Ignore trained machine learning models and generated figures
+outputs/models/*
+outputs/figures/*
